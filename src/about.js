@@ -8,13 +8,13 @@ export const softwareTableRows = `
 
 <!-- pfsc-ise -->
 <tr><td><a target="_blank"
-href="https://github.com/proofscape/pfsc-ise/tree/v23.1">
+href="https://github.com/proofscape/pfsc-ise/tree/v23.3">
 pfsc-ise
 </a><span class="vers" data-proj-name="pfsc-ise">
-23.1
+23.3
 </span></td>
 <td><a target="_blank"
-href="https://github.com/proofscape/pfsc-ise/blob/v23.1/LICENSE">
+href="https://github.com/proofscape/pfsc-ise/blob/v23.3/LICENSE">
 Apache-2.0
 </a></td></tr>
 
@@ -272,13 +272,13 @@ MIT
 
 <!-- pfsc-moose -->
 <tr><td><a target="_blank"
-href="https://github.com/proofscape/pfsc-moose/tree/v0.22.8">
+href="https://github.com/proofscape/pfsc-moose/tree/v0.22.9">
 pfsc-moose
 </a><span class="vers" data-proj-name="pfsc-moose">
-0.22.8
+0.22.9
 </span></td>
 <td><a target="_blank"
-href="https://github.com/proofscape/pfsc-moose/blob/v0.22.8/LICENSE">
+href="https://github.com/proofscape/pfsc-moose/blob/v0.22.9/LICENSE">
 Apache-2.0
 </a></td></tr>
 
