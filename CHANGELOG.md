@@ -2,7 +2,8 @@
 
 Bug Fixes:
 
-* Repair "View at..." links in tree view context menus.
+* Repair "View at..." links in tree view context menus
+  ([#4](https://github.com/proofscape/pfsc-ise/pull/4)).
 
 ## 25.3 (221108)
 
