@@ -243,14 +243,19 @@ util.getRepoPart = moose.getRepoPart;
  */
 util.libpath2remoteHostPageUrl = function(libpath, version, isDir, sourceRow, modIsTerm) {
     const lpParts = libpath.split('.');
-    const host = lpParts[0];
-    if (!['gh', 'bb'].includes(host)) {
+    let host = lpParts[0];
+    // For testing purposes (and doesn't hurt anything in production):
+    if (libpath.startsWith('test.hist.')) {
+        host = 'ex';
+    }
+    if (!['gh', 'bb', 'ex'].includes(host)) {
         return null;
     }
     let urlParts = [];
     urlParts.push({
         gh: 'https://github.com',
         bb: 'https://bitbucket.org',
+        ex: 'https://example.org',
     }[host]);
     urlParts.push(lpParts[1]); // owner
     urlParts.push(lpParts[2]); // repo
@@ -260,7 +265,7 @@ util.libpath2remoteHostPageUrl = function(libpath, version, isDir, sourceRow, mo
     if (!isDir) {
         let suffix = '.pfsc'
         if (sourceRow) {
-            suffix += `#${host === 'gh' ? "L" : "lines-"}${sourceRow}`;
+            suffix += `#${host !== 'bb' ? "L" : "lines-"}${sourceRow}`;
         }
         if (modIsTerm) {
             urlParts[urlParts.length - 1] += suffix;
@@ -275,7 +280,10 @@ util.libpath2remoteHostPageUrl = function(libpath, version, isDir, sourceRow, mo
 };
 
 util.libpathIsRemote = function(libpath) {
-    return libpath.startsWith('gh.') || libpath.startsWith('bb.');
+    return libpath.startsWith('gh.') ||
+           libpath.startsWith('bb.') ||
+           // For testing purposes (and doesn't hurt anything in production):
+           libpath.startsWith('test.hist.');
 };
 
 /* Given any libpath, return the libpath of the parent,
